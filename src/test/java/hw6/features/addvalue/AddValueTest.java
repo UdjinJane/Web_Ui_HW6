@@ -1,6 +1,8 @@
 package hw6.features.addvalue;
 
+import hw6.common.Configuration;
 import hw6.pages.NewProjectPage;
+import io.qameta.allure.Feature;
 import org.junit.jupiter.api.Test;
 import hw6.base.BaseUITest;
 import hw6.pages.LoginPage;
@@ -10,15 +12,15 @@ import java.util.UUID;
 
 import static hw6.common.Configuration.*;
 
+@Feature("AddValueTests")
 public class AddValueTest extends BaseUITest {
     private static String desc = "Sample Proj " + UUID.randomUUID().toString();
 
     @Test
     public void addNewProjectTest() {
+
         new LoginPage(driver)
-                .enterLogin(STUDENT_LOGIN)
-                .enterPassword(STUDENT_PASSWORD)
-                .clickLoginButton()
+                .authoriseScenario(Configuration.STUDENT_LOGIN, Configuration.STUDENT_PASSWORD)
                 .checkUrl(BASE_URL);
         // Сохранить Куку
         cookie = driver.manage().getCookieNamed(COOKIE_NAME);

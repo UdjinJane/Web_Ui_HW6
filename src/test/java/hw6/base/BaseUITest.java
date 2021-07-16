@@ -11,6 +11,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.Cookie;
+import org.openqa.selenium.logging.LogType;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
+import hw6.listener.CustomLogger;
 
 import java.util.concurrent.TimeUnit;
 
